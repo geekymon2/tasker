@@ -1,0 +1,5 @@
+bin/**
+obj/**
+obj/*
+obj/dotnet-crud-api.csproj.nuget.dgspec.json
+
