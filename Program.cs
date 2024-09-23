@@ -1,9 +1,16 @@
+using GeekyMon2.Tasker.DB;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddDbContext<TaskerDBContext>(options => options.UseCosmos(
+    builder.Configuration.GetConnectionString("TaskerDB"),
+    builder.Configuration.GetConnectionString("TaskerDBKey")
+));
 
 var app = builder.Build();
 
