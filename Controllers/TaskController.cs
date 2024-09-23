@@ -1,5 +1,7 @@
-namespace GeekyMon2.Tasker.Controllers;
-class TaskController : Microsoft.AspNetCore.Mvc.Controller
+namespace GeekyMon2.Tasker.Controllers
 {
-    public TaskController() { }
+    class TaskController : Microsoft.AspNetCore.Mvc.Controller
+    {
+        public TaskController() { }
+    }
 }

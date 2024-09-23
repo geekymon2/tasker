@@ -1,2 +1,3 @@
-# dotnet-crud-api
-.NET CRUD API
+# Tasker
+
+Task List API with .NET WebAPI and CosmosDB
