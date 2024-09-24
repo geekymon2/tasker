@@ -1,11 +1,10 @@
-using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
 using Microsoft.EntityFrameworkCore;
 
 namespace GeekyMon2.Tasker.DB;
 
 public class AppDBContext : DbContext
 {
-    private DbSet<Task> Tasks { get; set; }
+    public DbSet<Entities.Task> Tasks { get; set; }
 
     public AppDBContext(DbContextOptions<AppDBContext> options) : base(options)
     {

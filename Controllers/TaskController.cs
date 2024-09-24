@@ -1,3 +1,4 @@
+using AutoMapper;
 using GeekyMon2.Tasker.DB;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,15 +8,19 @@ namespace GeekyMon2.Tasker.Controllers;
 public class TaskController : ControllerBase
 {
     private readonly AppDBContext _context;
-    public TaskController(AppDBContext context)
+    private readonly IMapper _mapper;
+    public TaskController(AppDBContext context, IMapper mapper)
     {
         _context = context;
+        _mapper = mapper;
     }
 
     [HttpGet]
     [Route("/tasks")]
-    public string GetTasks()
+    public List<Models.TaskDto> GetTasks()
     {
-        return "This will return all tasks";
+        var tasks = _context.Tasks.ToList();
+        var tasksDto = _mapper.Map<List<Models.TaskDto>>(tasks);
+        return tasksDto;
     }
 }
