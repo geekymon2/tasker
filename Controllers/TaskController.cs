@@ -1,7 +1,21 @@
-namespace GeekyMon2.Tasker.Controllers
+using GeekyMon2.Tasker.DB;
+using Microsoft.AspNetCore.Mvc;
+
+namespace GeekyMon2.Tasker.Controllers;
+
+[ApiController]
+public class TaskController : ControllerBase
 {
-    class TaskController : Microsoft.AspNetCore.Mvc.Controller
+    private readonly AppDBContext _context;
+    public TaskController(AppDBContext context)
     {
-        public TaskController() { }
+        _context = context;
+    }
+
+    [HttpGet]
+    [Route("/tasks")]
+    public string GetTasks()
+    {
+        return "This will return all tasks";
     }
 }
