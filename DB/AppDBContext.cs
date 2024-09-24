@@ -22,6 +22,6 @@ public class AppDBContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Task>().ToContainer("tasks");
+        modelBuilder.Entity<Task>().ToContainer("tasks").HasPartitionKey(x => x.Id);
     }
 }

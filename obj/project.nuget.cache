@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "sR0kEFZViTDqf58pjwO2M3z+9bsK6uzHUy8en92CGkZKZXi/iIZ5+SmxCHLXrEck+CmeoeKhPN2Pl7RVB484Lg==",
+  "dgSpecHash": "O/F2CcuuxfdeC0mgSM/g2KKq8tvr013PEYI2IZUJwvE0pk1+yBl8/a1jfzp7S4KcV0hVu2hJvY5mDoWAHL2P/g==",
   "success": true,
   "projectFilePath": "/mnt/3d9b2c75-dfac-4181-845e-cb20984482e8/Development/DotNet/tasker/Tasker.csproj",
   "expectedPackageFiles": [
-    "/home/mon2/.nuget/packages/automapper/10.1.1/automapper.10.1.1.nupkg.sha512",
+    "/home/mon2/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
     "/home/mon2/.nuget/packages/automapper.ef6/3.0.1/automapper.ef6.3.0.1.nupkg.sha512",
+    "/home/mon2/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "/home/mon2/.nuget/packages/azure.core/1.19.0/azure.core.1.19.0.nupkg.sha512",
     "/home/mon2/.nuget/packages/delegatedecompiler/0.34.0/delegatedecompiler.0.34.0.nupkg.sha512",
     "/home/mon2/.nuget/packages/delegatedecompiler.entityframework/0.34.0/delegatedecompiler.entityframework.0.34.0.nupkg.sha512",
@@ -99,7 +100,7 @@
     "/home/mon2/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
     "/home/mon2/.nuget/packages/system.objectmodel/4.3.0/system.objectmodel.4.3.0.nupkg.sha512",
     "/home/mon2/.nuget/packages/system.reflection/4.3.0/system.reflection.4.3.0.nupkg.sha512",
-    "/home/mon2/.nuget/packages/system.reflection.emit/4.7.0/system.reflection.emit.4.7.0.nupkg.sha512",
+    "/home/mon2/.nuget/packages/system.reflection.emit/4.3.0/system.reflection.emit.4.3.0.nupkg.sha512",
     "/home/mon2/.nuget/packages/system.reflection.emit.ilgeneration/4.3.0/system.reflection.emit.ilgeneration.4.3.0.nupkg.sha512",
     "/home/mon2/.nuget/packages/system.reflection.emit.lightweight/4.3.0/system.reflection.emit.lightweight.4.3.0.nupkg.sha512",
     "/home/mon2/.nuget/packages/system.reflection.extensions/4.3.0/system.reflection.extensions.4.3.0.nupkg.sha512",
