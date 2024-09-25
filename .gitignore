@@ -1,5 +1,6 @@
 bin/**
 obj/**
 obj/*
-obj/dotnet-crud-api.csproj.nuget.dgspec.json
-
+.vs
+/obj/**
+Tasker.csproj.user

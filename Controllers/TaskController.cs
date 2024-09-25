@@ -17,7 +17,7 @@ public class TaskController : ControllerBase
 
     [HttpGet]
     [Route("/tasks")]
-    public async List<Models.TaskDto> GetTasks()
+    public List<Models.TaskDto> GetTasks()
     {
         var tasks = _context.Tasks.ToList();
         var tasksDto = _mapper.Map<List<Models.TaskDto>>(tasks);
