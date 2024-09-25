@@ -6,6 +6,6 @@ public class MappingProfile : Profile
 {
     public MappingProfile()
     {
-        CreateMap<Entities.Task, Models.TaskDto>();
+        CreateMap<Entities.Task, Models.TaskDto>().ReverseMap();
     }
 }
