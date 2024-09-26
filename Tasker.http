@@ -1,6 +1,9 @@
 @Tasker_HostAddress = http://localhost:5058
 
-GET {{Tasker_HostAddress}}/weatherforecast/
+GET {{Tasker_HostAddress}}/tasks
+Accept: application/json
+
+POST {{Tasker_HostAddress}}/task
 Accept: application/json
 
 ###

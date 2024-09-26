@@ -1,4 +1,5 @@
 using GeekyMon2.Tasker.DB;
+using GeekyMon2.Tasker.Exception;
 using GeekyMon2.Tasker.Mapper;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDBContext>();
-builder.Services.AddControllers();
+builder.Services.AddControllers(options => { options.Filters.Add(new ExceptionFilter()); });
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 var app = builder.Build();
