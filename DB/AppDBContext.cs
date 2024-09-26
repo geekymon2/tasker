@@ -25,6 +25,8 @@ public class AppDBContext(DbContextOptions<AppDBContext> options, IConfiguration
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         string container = _config.GetValue<string>("AppConfig:CosmosContainer") ?? "tasker-container-dev";
+
+        modelBuilder.Entity<Entities.Task>().Property(c => c.status).HasConversion<string>();
         modelBuilder.Entity<Entities.Task>().ToContainer(container).HasPartitionKey(x => x.Id);
     }
 }

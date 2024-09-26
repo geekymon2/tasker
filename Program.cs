@@ -11,6 +11,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDBContext>();
 builder.Services.AddControllers(options => { options.Filters.Add(new ExceptionFilter()); });
 builder.Services.AddAutoMapper(typeof(MappingProfile));
+builder.Services.Configure<Microsoft.AspNetCore.Mvc.JsonOptions>(O => O.JsonSerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter()));
 
 var app = builder.Build();
 
