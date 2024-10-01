@@ -31,4 +31,15 @@ public class TaskController(AppDBContext context, IMapper mapper) : ControllerBa
 
         return id;
     }
+
+    [HttpDelete]
+    [Route("/task/{id}")]
+    public bool DeleteTask(string id)
+    {
+        //bool status = _context.<Entities.Task>(task).Entity.Id;
+        bool status = true;
+        _context.SaveChanges();
+
+        return status;
+    }
 }
