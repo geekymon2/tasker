@@ -8,24 +8,43 @@ variables:
   buildConfiguration: 'Release'
   
 steps:
+# Install
 - task: UseDotNet@2
   displayName: 'Install .NET Core SDK'
   inputs:
     version: 8.x
+
+# Restore
 - task: DotNetCoreCLI@2
   inputs:
     command: 'restore'
     arguments: --force
     feedsToUse: 'select'
     vstsFeed: 'geekymon2'
+
+# Build
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
     arguments: '--configuration $(buildConfiguration)'
   displayName: 'dotnet build $(buildConfiguration)'
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: "Tasker"
-    publishLocation: 'Container'
 
+# Archive the build output
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(Build.BinariesDirectory)'
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/build_output.zip'
+    verbose: true
+
+# Publish the zip file as a universal package to Azure Artifacts
+- task: UniversalPackages@0
+  inputs:
+    command: 'publish'
+    publishDirectory: '$(Build.ArtifactStagingDirectory)'
+    feedsToUse: 'internal'
+    vstsFeed: 'tasker' # Replace with your feed name
+    vstsFeedPackageName: 'tasker'       # Name of your package
+    versionOption: '1.0.0'
+    packagePublishDescription: 'Build output as a zip file'
