@@ -46,5 +46,5 @@ steps:
     feedsToUsePublish: 'internal'
     vstsFeedPublish: 'Tasker/tasker'
     versionOption: 'custom'
-    versionPublish: '$(Build.BuildId)'
+    versionPublish: '1.0.$(Build.BuildId)'
     packagePublishDescription: 'Build output as a zip file'
