@@ -44,8 +44,6 @@ steps:
     command: 'publish'
     publishDirectory: '$(Build.ArtifactStagingDirectory)'
     feedsToUse: 'internal'
-    vstsFeed: 'tasker' # Replace with your feed name
-    vstsFeedPackageName: 'tasker'       # Name of your package
+    vstsFeed: 'tasker'
     versionOption: 'custom'
-    versionPublishSelector: '$(Build.BuildId)'
     packagePublishDescription: 'Build output as a zip file'
