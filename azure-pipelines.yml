@@ -25,9 +25,9 @@ steps:
 # Build
 - task: DotNetCoreCLI@2
   inputs:
-    command: 'build'
+    command: 'publish'
     arguments: '--configuration $(buildConfiguration)'
-  displayName: 'dotnet build $(buildConfiguration)'
+  displayName: 'dotnet publish $(buildConfiguration)'
 
 # Archive the build output
 - task: ArchiveFiles@2
