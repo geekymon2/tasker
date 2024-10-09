@@ -43,8 +43,8 @@ steps:
   inputs:
     command: 'publish'
     publishDirectory: '$(Build.ArtifactStagingDirectory)'
-    feedsToUse: 'internal'
-    vstsFeed: 'tasker'
-    feed: 'tasker'
+    feedsToUsePublish: 'internal'
+    vstsFeedPublish: 'tasker'
     versionOption: 'custom'
+    versionPublish: '$(Build.BuildId)'
     packagePublishDescription: 'Build output as a zip file'
