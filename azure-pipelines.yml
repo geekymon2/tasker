@@ -44,7 +44,7 @@ steps:
     command: 'publish'
     publishDirectory: '$(Build.ArtifactStagingDirectory)'
     feedsToUsePublish: 'internal'
-    vstsFeedPublish: 'geekymon2/tasker'
+    vstsFeedPublish: 'Tasker/tasker'
     versionOption: 'custom'
     versionPublish: '$(Build.BuildId)'
     packagePublishDescription: 'Build output as a zip file'
