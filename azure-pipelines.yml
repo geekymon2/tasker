@@ -45,5 +45,6 @@ steps:
     publishDirectory: '$(Build.ArtifactStagingDirectory)'
     feedsToUse: 'internal'
     vstsFeed: 'tasker'
+    feed: 'tasker'
     versionOption: 'custom'
     packagePublishDescription: 'Build output as a zip file'
