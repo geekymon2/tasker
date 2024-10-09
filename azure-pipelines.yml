@@ -46,5 +46,6 @@ steps:
     feedsToUse: 'internal'
     vstsFeed: 'tasker' # Replace with your feed name
     vstsFeedPackageName: 'tasker'       # Name of your package
-    versionOption: '1.0.0'
+    versionOption: 'custom'
+    versionPublishSelector: '$(Build.BuildId)'
     packagePublishDescription: 'Build output as a zip file'
