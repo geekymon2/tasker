@@ -29,20 +29,11 @@ steps:
     arguments: '--configuration $(buildConfiguration)'
   displayName: 'dotnet publish $(buildConfiguration)'
 
-# Archive the build output
-- task: ArchiveFiles@2
-  inputs:
-    rootFolderOrFile: '$(Build.BinariesDirectory)'
-    includeRootFolder: false
-    archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/build_output.zip'
-    verbose: true
-
 # Publish the zip file as a universal package to Azure Artifacts
 - task: UniversalPackages@0
   inputs:
     command: 'publish'
-    publishDirectory: '$(Build.ArtifactStagingDirectory)'
+    publishDirectory: '$(Build.SourcesDirectory)/bin/$(buildConfiguration)/net8.0/'
     feedsToUsePublish: 'internal'
     vstsFeedPublish: 'Tasker/tasker'
     vstsFeedPackagePublish: 'tasker'
