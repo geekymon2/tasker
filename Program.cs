@@ -1,3 +1,4 @@
+using GeekyMon2.Tasker.Common;
 using GeekyMon2.Tasker.DB;
 using GeekyMon2.Tasker.Exception;
 using GeekyMon2.Tasker.Mapper;
@@ -21,6 +22,10 @@ if (!app.Environment.IsProduction())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+var logger = app.Logger;
+var version = VersionHelper.GetBuildVersion();
+logger.LogInformation("Application Build Version: {Version}", version);
 
 app.UseHttpsRedirection();
 app.MapControllers();
