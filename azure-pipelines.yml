@@ -41,3 +41,8 @@ steps:
     versionPublish: '1.0.$(Build.BuildId)'
   
     packagePublishDescription: 'Build output as a zip file'
+
+- script: |
+    git tag -a v1.0.$(Build.BuildId) -m "Release v1.0.$(Build.BuildId)"
+    git push --follow-tags
+    displayName: 'Tag source code with the build number and push'

@@ -15,15 +15,16 @@ builder.Services.AddAutoMapper(typeof(MappingProfile));
 builder.Services.Configure<Microsoft.AspNetCore.Mvc.JsonOptions>(O => O.JsonSerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter()));
 
 var app = builder.Build();
-
+var logger = app.Logger;
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsProduction())
 {
+    logger.LogInformation("Environment is Non Production. Setting up Swagger and Swagger UI");
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-var logger = app.Logger;
+
 var version = VersionHelper.GetBuildVersion();
 logger.LogInformation("Application Build Version: {Version}", version);
 
