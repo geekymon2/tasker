@@ -22,12 +22,10 @@ steps:
   persistCredentials: true
   fetchDepth: 1
 
-- script: |
-    git checkout "$(Build.SourceBranch)"
-    git pull
-  workingDirectory: '$(Build.SourcesDirectory)'
-  displayName: 'Checkout the source code'
-
+- task: CmdLine@2
+  displayName: Checkout $(Build.SourceBranchName)
+  inputs:
+    script: 'git checkout $(Build.SourceBranchName)'
 
 # Install
 - task: UseDotNet@2
