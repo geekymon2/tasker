@@ -27,8 +27,8 @@ steps:
   inputs:
     workingDirectory: '$(Build.SourcesDirectory)'
     script: |
-      'git checkout $(Build.SourceBranchName)'
-      'git pull'
+      git checkout $(Build.SourceBranchName)
+      git pull
 
 # Install
 - task: UseDotNet@2
