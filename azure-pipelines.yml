@@ -25,7 +25,9 @@ steps:
 - task: CmdLine@2
   displayName: Checkout $(Build.SourceBranchName)
   inputs:
-    script: 'git checkout $(Build.SourceBranchName)'
+    script: |
+      'git checkout $(Build.SourceBranchName)'
+      'git pull'
 
 # Install
 - task: UseDotNet@2
