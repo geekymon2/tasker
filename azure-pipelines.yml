@@ -8,6 +8,12 @@ variables:
   buildConfiguration: 'Release'
   
 steps:
+# Checkout
+- checkout: self
+  clean: true
+  persistCredentials: true
+  fetchDepth: 1
+
 # Install
 - task: UseDotNet@2
   displayName: 'Install .NET Core SDK'
@@ -42,17 +48,10 @@ steps:
   
     packagePublishDescription: 'Build output as a zip file'
 
-- task: GitTag@2
-  inputs:
-    tagMessage: 'Release v1.0.$(Build.BuildId)'
-    tagType: 'build'
-    buildNumber: '$(Build.BuildId)'
-
-
-# - script: |
-#     git config --global user.name "Build Host"
-#     git config --global user.email "buildagent@$(Environment.Name)"
-#     git tag -a v1.0.$(Build.BuildId) -m "Release v1.0.$(Build.BuildId)"
-#     git push --follow-tags
-#   workingDirectory: '$(Build.SourcesDirectory)'
-#   displayName: 'Tag source code with the build number and push'
+- script: |
+    git config --global user.name "Build Host"
+    git config --global user.email "buildagent@$(Environment.Name)"
+    git tag -a v1.0.$(Build.BuildId) -m "Release v1.0.$(Build.BuildId)"
+    git push
+  workingDirectory: '$(Build.SourcesDirectory)'
+  displayName: 'Tag source code with the build number and push'
