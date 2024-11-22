@@ -48,4 +48,4 @@ steps:
     git tag -a v1.0.$(Build.BuildId) -m "Release v1.0.$(Build.BuildId)"
     git push --follow-tags
   workingDirectory: '$(Build.SourcesDirectory)'
-    displayName: 'Tag source code with the build number and push'
+  displayName: 'Tag source code with the build number and push'
