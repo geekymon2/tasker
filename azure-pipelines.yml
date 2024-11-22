@@ -9,9 +9,9 @@ variables:
 
 resources:
   repositories:
-    - repository: geekymon2
-      type: git
-      name: tasker
+    - repository: tasker
+      type: github
+      name: geekymon2/tasker
       ref: $(Build.SourceBranch)  
 
 steps:
