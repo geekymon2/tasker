@@ -67,6 +67,6 @@ steps:
     git config --global user.name "Build Host"
     git config --global user.email "buildagent@$(Environment.Name)"
     git tag -a v1.0.$(Build.BuildId) -m "Release v1.0.$(Build.BuildId)"
-    git push
+    git push --tags
   workingDirectory: '$(Build.SourcesDirectory)'
   displayName: 'Tag source code with the build number and push'
