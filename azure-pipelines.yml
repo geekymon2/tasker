@@ -13,7 +13,7 @@ resources:
       type: github
       name: geekymon2/tasker
       endpoint: geekymon2
-      ref: $(Build.SourceBranch)  
+      ref: "refs/heads/$(Build.SourceBranch)"
 
 steps:
 # Checkout
@@ -21,6 +21,7 @@ steps:
   clean: true
   persistCredentials: true
   fetchDepth: 1
+
 
 # Install
 - task: UseDotNet@2
