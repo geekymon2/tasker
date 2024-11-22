@@ -13,7 +13,7 @@ resources:
       type: github
       name: geekymon2/tasker
       endpoint: geekymon2
-      ref: "refs/heads/$(Build.SourceBranch)"
+      ref: "$(Build.SourceBranch)"
 
 steps:
 # Checkout
@@ -21,6 +21,12 @@ steps:
   clean: true
   persistCredentials: true
   fetchDepth: 1
+
+- script: |
+    git checkout "$(Build.SourceBranch)"
+    git pull
+  workingDirectory: '$(Build.SourcesDirectory)'
+  displayName: 'Checkout the source code'
 
 
 # Install
