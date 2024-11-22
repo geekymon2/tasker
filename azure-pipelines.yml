@@ -6,14 +6,21 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
-  
+
+resources:
+  repositories:
+    - repository: geekymon2
+      type: git
+      name: GeekyMon2/Tasker
+      ref: $(Build.SourceBranch)  
+
+
 steps:
 # Checkout
 - checkout: self
   clean: true
   persistCredentials: true
   fetchDepth: 1
-  ref: $(Build.SourceBranch)
 
 # Install
 - task: UseDotNet@2
