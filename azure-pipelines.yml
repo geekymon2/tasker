@@ -20,15 +20,14 @@ steps:
 - checkout: self
   clean: true
   persistCredentials: true
-  fetchDepth: 1
 
-# - task: CmdLine@2
-#   displayName: Checkout $(Build.SourceBranchName)
-#   inputs:
-#     workingDirectory: '$(Build.SourcesDirectory)'
-#     script: |
-#       git checkout $(Build.SourceBranchName)
-#       git pull --allow-unrelated-histories
+- task: CmdLine@2
+  displayName: Checkout $(Build.SourceBranchName)
+  inputs:
+    workingDirectory: '$(Build.SourcesDirectory)'
+    script: |
+      git fetch
+      git checkout $(Build.SourceBranchName)
 
 # Install
 - task: UseDotNet@2
