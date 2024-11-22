@@ -28,7 +28,7 @@ steps:
     workingDirectory: '$(Build.SourcesDirectory)'
     script: |
       git checkout $(Build.SourceBranchName)
-      git pull
+      git pull --allow-unrelated-histories
 
 # Install
 - task: UseDotNet@2
