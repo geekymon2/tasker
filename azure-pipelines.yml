@@ -11,9 +11,8 @@ resources:
   repositories:
     - repository: geekymon2
       type: git
-      name: GeekyMon2/Tasker
+      name: tasker
       ref: $(Build.SourceBranch)  
-
 
 steps:
 # Checkout
